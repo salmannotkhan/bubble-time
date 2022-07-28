@@ -61,11 +61,10 @@
             letterElement.innerText = letter;
             letterElement.style.left = getRandomSpawnLocation();
             letterElement.style.backgroundColor= getRandomColor();
-            intersectionObserver.observe(letterElement);
             letterMap[letter] = letterElement;
             letterElement.style.animationDuration = `${12 - (difficulty * 2)}s`;
             document.body.append(letterElement);
-            console.log(difficulty)
+            intersectionObserver.observe(letterElement);
             const randomTimeout = Math.random() * ((6 - difficulty) * 1000);
             if (lives) {
                 setRandomTimeout(randomTimeout);
